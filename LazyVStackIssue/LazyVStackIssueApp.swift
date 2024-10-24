@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct LazyVStackIssueApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeatureView(store: Store(initialState: ImageFeature.State(), reducer: {
+                ImageFeature()
+            }))
         }
     }
 }
